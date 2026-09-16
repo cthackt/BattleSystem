@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://bh78owy7iw3qc" path="res://BattleManager.gd" id="1_oxp8w"]
 [ext_resource type="Script" uid="uid://c2kmncsj3b8lr" path="res://BattleUI.gd" id="2_7sfm4"]
+[ext_resource type="Script" uid="uid://clwwra6fvnlqe" path="res://player.gd" id="2_mhv3b"]
 [ext_resource type="Texture2D" uid="uid://ci0s3nok64e8t" path="res://healthbarUnder.png" id="3_6t8i5"]
 [ext_resource type="Texture2D" uid="uid://dpfonbrnqp1xx" path="res://slash-ezgif.com-gif-to-sprite-converter.png" id="3_7sfm4"]
 [ext_resource type="Texture2D" uid="uid://dxymuu772fg4y" path="res://healthbarProgress.png" id="4_dw4jg"]
 [ext_resource type="Texture2D" uid="uid://duxtq33huoxeh" path="res://staminabarProgress.png" id="5_dw4jg"]
+[ext_resource type="Script" uid="uid://c33410bv3levd" path="res://enemy.gd" id="5_lcjiy"]
 [ext_resource type="Texture2D" uid="uid://brv5h1i30rhrv" path="res://shield.png" id="7_0npn6"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_i431l"]
@@ -201,6 +203,7 @@ transform = Transform3D(0.93155956, -0.0033039544, 0.36357385, -0.012426874, 0.9
 current = true
 
 [node name="Player" type="Node3D" parent="." unique_id=1876332250]
+script = ExtResource("2_mhv3b")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=541722479]
 mesh = SubResource("BoxMesh_i431l")
@@ -227,6 +230,7 @@ texture = ExtResource("7_0npn6")
 
 [node name="Enemy" type="Node3D" parent="." unique_id=603075046]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.215177)
+script = ExtResource("5_lcjiy")
 
 [node name="Torso" type="MeshInstance3D" parent="Enemy" unique_id=863515893]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7345033, 0, 0)
