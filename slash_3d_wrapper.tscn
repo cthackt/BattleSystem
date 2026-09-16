@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://f7j6kjxpxh1o"]
+
+[ext_resource type="PackedScene" uid="uid://co1ocp4dbg0ld" path="res://SlashEffect.tscn" id="1_pyi1l"]
+
+[node name="Slash3DWrapper" type="Node3D" unique_id=1487539181]
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=792104834]
+
+[node name="Node2D" parent="SubViewport" unique_id=1167639985 instance=ExtResource("1_pyi1l")]

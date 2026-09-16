@@ -1,0 +1,387 @@
+[gd_scene format=3 uid="uid://ikjcknxwvr6e"]
+
+[ext_resource type="Script" uid="uid://bh78owy7iw3qc" path="res://BattleManager.gd" id="1_oxp8w"]
+[ext_resource type="Script" uid="uid://c2kmncsj3b8lr" path="res://BattleUI.gd" id="2_7sfm4"]
+[ext_resource type="Texture2D" uid="uid://ci0s3nok64e8t" path="res://healthbarUnder.png" id="3_6t8i5"]
+[ext_resource type="Texture2D" uid="uid://dpfonbrnqp1xx" path="res://slash-ezgif.com-gif-to-sprite-converter.png" id="3_7sfm4"]
+[ext_resource type="Texture2D" uid="uid://dxymuu772fg4y" path="res://healthbarProgress.png" id="4_dw4jg"]
+[ext_resource type="Texture2D" uid="uid://duxtq33huoxeh" path="res://staminabarProgress.png" id="5_dw4jg"]
+[ext_resource type="Texture2D" uid="uid://brv5h1i30rhrv" path="res://shield.png" id="7_0npn6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_i431l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6t8i5"]
+albedo_color = Color(0, 0.6156863, 0, 1)
+
+[sub_resource type="Animation" id="Animation_oxp8w"]
+resource_name = "attack"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7sfm4"]
+_data = {
+&"attack": SubResource("Animation_oxp8w")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i431l"]
+atlas = ExtResource("3_7sfm4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t8i5"]
+atlas = ExtResource("3_7sfm4")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dw4jg"]
+atlas = ExtResource("3_7sfm4")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0npn6"]
+atlas = ExtResource("3_7sfm4")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhv3b"]
+atlas = ExtResource("3_7sfm4")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcjiy"]
+atlas = ExtResource("3_7sfm4")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ol6im"]
+atlas = ExtResource("3_7sfm4")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1i6x"]
+atlas = ExtResource("3_7sfm4")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sl0w2"]
+atlas = ExtResource("3_7sfm4")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xjphx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i431l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6t8i5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dw4jg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0npn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhv3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcjiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ol6im")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1i6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sl0w2")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dw4jg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0npn6"]
+albedo_color = Color(0.67058825, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xjphx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dc37l"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dc37l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tn7qg"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tn7qg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w2omg"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gxxa0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wn5tk"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0npn6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhv3b"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sfm4"]
+atlas = ExtResource("3_7sfm4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elvfr"]
+atlas = ExtResource("3_7sfm4")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4s0ev"]
+atlas = ExtResource("3_7sfm4")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pihy1"]
+atlas = ExtResource("3_7sfm4")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slotg"]
+atlas = ExtResource("3_7sfm4")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ix8ov"]
+atlas = ExtResource("3_7sfm4")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bx4lf"]
+atlas = ExtResource("3_7sfm4")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22sa7"]
+atlas = ExtResource("3_7sfm4")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aacmo"]
+atlas = ExtResource("3_7sfm4")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dc37l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7sfm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_elvfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4s0ev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pihy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slotg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ix8ov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bx4lf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22sa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aacmo")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="Battle" type="Node3D" unique_id=1788122420]
+script = ExtResource("1_oxp8w")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=558576287]
+transform = Transform3D(0.93155956, -0.0033039544, 0.36357385, -0.012426874, 0.99908525, 0.04091962, -0.3633765, -0.042637154, 0.9306663, 1.7634405, 0.7664424, 2.2082522)
+current = true
+
+[node name="Player" type="Node3D" parent="." unique_id=1876332250]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=541722479]
+mesh = SubResource("BoxMesh_i431l")
+surface_material_override/0 = SubResource("StandardMaterial3D_6t8i5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player" unique_id=1334406925]
+libraries/ = SubResource("AnimationLibrary_7sfm4")
+
+[node name="PCSlashAnim" type="AnimatedSprite3D" parent="Player" unique_id=1635295306]
+process_mode = 3
+transform = Transform3D(2.743275, 0, 0, 0, 2.2273598, 0, 0, 0, 1, 0.99779797, 0.11267567, -2.1380367)
+visible = false
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_xjphx")
+frame = 8
+frame_progress = 1.0
+
+[node name="PlayerGuardAnim" type="Sprite3D" parent="Player" unique_id=941719064]
+transform = Transform3D(0.13994828, 0, 0, 0, 0.13994828, 0, 0, 0, 0.07960862, 0.42021543, 0.051319182, 0.5890298)
+visible = false
+billboard = 1
+texture = ExtResource("7_0npn6")
+
+[node name="Enemy" type="Node3D" parent="." unique_id=603075046]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.215177)
+
+[node name="Torso" type="MeshInstance3D" parent="Enemy" unique_id=863515893]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7345033, 0, 0)
+mesh = SubResource("BoxMesh_dw4jg")
+surface_material_override/0 = SubResource("StandardMaterial3D_0npn6")
+
+[node name="Head" type="MeshInstance3D" parent="Enemy" unique_id=426343898]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.78447825, 0.9401462, 0.045223713)
+mesh = SubResource("BoxMesh_xjphx")
+surface_material_override/0 = SubResource("StandardMaterial3D_dc37l")
+
+[node name="RightArm" type="MeshInstance3D" parent="Enemy" unique_id=1869194125]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.15117663, 0, 0.04676771)
+mesh = SubResource("BoxMesh_dc37l")
+surface_material_override/0 = SubResource("StandardMaterial3D_tn7qg")
+
+[node name="LeftArm" type="MeshInstance3D" parent="Enemy" unique_id=618643795]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.544142, 0, 0)
+mesh = SubResource("BoxMesh_tn7qg")
+surface_material_override/0 = SubResource("StandardMaterial3D_w2omg")
+
+[node name="RightLeg" type="MeshInstance3D" parent="Enemy" unique_id=1986286830]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.2595685, -0.919025, 0)
+mesh = SubResource("BoxMesh_gxxa0")
+surface_material_override/0 = SubResource("StandardMaterial3D_wn5tk")
+
+[node name="LeftLeg" type="MeshInstance3D" parent="Enemy" unique_id=1205173169]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.0961695, -0.9187322, 0)
+mesh = SubResource("BoxMesh_0npn6")
+surface_material_override/0 = SubResource("StandardMaterial3D_mhv3b")
+
+[node name="NMESlashAnim" type="AnimatedSprite3D" parent="Enemy" unique_id=1020463716]
+transform = Transform3D(2.2252016, 0, 0, 0, 2.1803436, 0, 0, 0, 0.9999992, 0.38678122, 0.38579577, 5.144806)
+visible = false
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_dc37l")
+frame_progress = 0.49926174
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1819399980]
+
+[node name="UI" type="Control" parent="CanvasLayer" unique_id=1410534687]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_7sfm4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI" unique_id=840561406]
+layout_mode = 1
+offset_right = 132.0
+offset_bottom = 85.0
+scale = Vector2(1.046661, 1.1220132)
+theme_override_constants/separation = 29
+
+[node name="EnemyStats" type="HBoxContainer" parent="CanvasLayer/UI/VBoxContainer" unique_id=1280284468]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="HealthLabel" type="Label" parent="CanvasLayer/UI/VBoxContainer/EnemyStats" unique_id=235224577]
+layout_mode = 2
+text = "HP"
+
+[node name="EnemyHealthBar" type="ProgressBar" parent="CanvasLayer/UI/VBoxContainer/EnemyStats" unique_id=1855158084]
+layout_mode = 2
+
+[node name="StaminaLabel" type="Label" parent="CanvasLayer/UI/VBoxContainer/EnemyStats" unique_id=1930991381]
+layout_mode = 2
+text = "STA"
+
+[node name="EnemyStaminaBar" type="ProgressBar" parent="CanvasLayer/UI/VBoxContainer/EnemyStats" unique_id=1217880164]
+layout_mode = 2
+
+[node name="BattleLog" type="PanelContainer" parent="CanvasLayer/UI/VBoxContainer" unique_id=1545229967]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI/VBoxContainer/BattleLog" unique_id=454739672]
+layout_mode = 2
+
+[node name="LogText" type="Label" parent="CanvasLayer/UI/VBoxContainer/BattleLog/MarginContainer" unique_id=697229103]
+layout_mode = 2
+text = "battle started!"
+
+[node name="PlayerHealthBar" type="ProgressBar" parent="CanvasLayer/UI" unique_id=1960084193]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -83.0
+offset_right = 57.57361
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+value = 100.0
+
+[node name="TexturePlayerHealthBar" type="TextureProgressBar" parent="CanvasLayer/UI" unique_id=1707282503]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -137.0
+offset_top = -40.0
+offset_right = -49.239502
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(4.4255576, 1.7321668)
+texture_under = ExtResource("3_6t8i5")
+texture_progress = ExtResource("4_dw4jg")
+
+[node name="PlayerStaminaBar" type="ProgressBar" parent="CanvasLayer/UI" unique_id=1730509896]
+layout_mode = 0
+offset_left = 116.179375
+offset_right = 120.179375
+offset_bottom = 27.0
+
+[node name="TexturePlayerStaminaBar" type="TextureProgressBar" parent="CanvasLayer/UI" unique_id=2023162918]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -137.00003
+offset_top = -21.0
+offset_right = -73.00003
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(4.43863, 1.7110487)
+texture_under = ExtResource("3_6t8i5")
+texture_progress = ExtResource("5_dw4jg")
+
+[node name="TargetZoneLabel" type="Label" parent="CanvasLayer/UI" unique_id=1488166643]
+layout_mode = 0
+offset_left = 928.0
+offset_top = 187.0
+offset_right = 1053.0
+offset_bottom = 210.0
+text = "Targeting: Torso"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=215954269]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.034906864, 1.3808385, 0.071320176)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1457224166]
+transform = Transform3D(0.48497754, 0, -0.8745267, 0, 1, 0, 0.8745267, 0, 0.48497754, -6.0426106, 2.6339924, 3.3911269)
+light_energy = 3.5
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1166929350]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4005289, 1.6343063, -4.023611)
