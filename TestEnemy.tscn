@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://ddwbf6yp1hf2s"]
+
+[ext_resource type="Script" uid="uid://c33410bv3levd" path="res://enemy.gd" id="1_5exoo"]
+[ext_resource type="Texture2D" uid="uid://dpfonbrnqp1xx" path="res://slash-ezgif.com-gif-to-sprite-converter.png" id="2_oscqb"]
+[ext_resource type="PackedScene" uid="uid://vq2ua5chjigu" path="res://health_bar_3d.tscn" id="3_oscqb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dw4jg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0npn6"]
+resource_local_to_scene = true
+albedo_color = Color(0.67058825, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xjphx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dc37l"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dc37l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tn7qg"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tn7qg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w2omg"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gxxa0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wn5tk"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0npn6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhv3b"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sfm4"]
+atlas = ExtResource("2_oscqb")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elvfr"]
+atlas = ExtResource("2_oscqb")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4s0ev"]
+atlas = ExtResource("2_oscqb")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pihy1"]
+atlas = ExtResource("2_oscqb")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slotg"]
+atlas = ExtResource("2_oscqb")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ix8ov"]
+atlas = ExtResource("2_oscqb")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bx4lf"]
+atlas = ExtResource("2_oscqb")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22sa7"]
+atlas = ExtResource("2_oscqb")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aacmo"]
+atlas = ExtResource("2_oscqb")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dc37l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7sfm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_elvfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4s0ev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pihy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slotg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ix8ov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bx4lf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22sa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aacmo")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="QuadMesh" id="QuadMesh_oscqb"]
+resource_local_to_scene = true
+size = Vector2(1.5, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_dyq2k"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wlbku"]
+resource_local_to_scene = true
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_dyq2k")
+billboard_mode = 1
+
+[node name="Enemy" type="Node3D" unique_id=2059028000]
+script = ExtResource("1_5exoo")
+
+[node name="Torso" type="MeshInstance3D" parent="." unique_id=681183397]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7345033, 0, 0)
+mesh = SubResource("BoxMesh_dw4jg")
+surface_material_override/0 = SubResource("StandardMaterial3D_0npn6")
+
+[node name="Head" type="MeshInstance3D" parent="." unique_id=98257340]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.78447825, 0.9401462, 0.045223713)
+mesh = SubResource("BoxMesh_xjphx")
+surface_material_override/0 = SubResource("StandardMaterial3D_dc37l")
+
+[node name="RightArm" type="MeshInstance3D" parent="." unique_id=1317486324]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.15117663, 0, 0.04676771)
+mesh = SubResource("BoxMesh_dc37l")
+surface_material_override/0 = SubResource("StandardMaterial3D_tn7qg")
+
+[node name="LeftArm" type="MeshInstance3D" parent="." unique_id=803803285]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.544142, 0, 0)
+mesh = SubResource("BoxMesh_tn7qg")
+surface_material_override/0 = SubResource("StandardMaterial3D_w2omg")
+
+[node name="RightLeg" type="MeshInstance3D" parent="." unique_id=5335175]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.2595685, -0.919025, 0)
+mesh = SubResource("BoxMesh_gxxa0")
+surface_material_override/0 = SubResource("StandardMaterial3D_wn5tk")
+
+[node name="LeftLeg" type="MeshInstance3D" parent="." unique_id=2043377825]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.0961695, -0.9187322, 0)
+mesh = SubResource("BoxMesh_0npn6")
+surface_material_override/0 = SubResource("StandardMaterial3D_mhv3b")
+
+[node name="NMESlashAnim" type="AnimatedSprite3D" parent="." unique_id=1074577334]
+transform = Transform3D(2.2252016, 0, 0, 0, 2.1803436, 0, 0, 0, 0.9999992, 0.38678122, 0.38579577, 5.144806)
+visible = false
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_dc37l")
+frame_progress = 0.49926174
+
+[node name="HealthBar3D" parent="." unique_id=1995476344 instance=ExtResource("3_oscqb")]
+transform = Transform3D(0.14235269, 0, 0, 0, 0.067035556, 0, 0, 0, 1, 0.7768742, 1.276222, 0.019625932)
+
+[node name="MeshInstance3D" parent="HealthBar3D" index="1" unique_id=1157800415]
+mesh = SubResource("QuadMesh_oscqb")
+surface_material_override/0 = SubResource("StandardMaterial3D_wlbku")
+
+[editable path="HealthBar3D"]

@@ -198,21 +198,26 @@ animations = [{
 [node name="Battle" type="Node3D" unique_id=1788122420]
 script = ExtResource("1_oxp8w")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=558576287]
-transform = Transform3D(0.93155956, -0.0033039544, 0.36357385, -0.012426874, 0.99908525, 0.04091962, -0.3633765, -0.042637154, 0.9306663, 1.7634405, 0.7664424, 2.2082522)
-current = true
+[node name="OrbitPivot" type="Node3D" parent="." unique_id=1411830766]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.82933724, 0, -4.1420145)
 
-[node name="Player" type="Node3D" parent="." unique_id=1876332250]
+[node name="Camera3D" type="Camera3D" parent="OrbitPivot" unique_id=558576287]
+transform = Transform3D(0.93155956, -0.0033039588, 0.3635739, -0.012426874, 0.99908525, 0.040919628, -0.3633765, -0.042637154, 0.93066627, 2.002293, 0.7664424, 8.274363)
+current = true
+fov = 33.74624
+
+[node name="Player" type="Node3D" parent="OrbitPivot" unique_id=1876332250]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.82933724, 0, 4.1420145)
 script = ExtResource("2_mhv3b")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=541722479]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="OrbitPivot/Player" unique_id=541722479]
 mesh = SubResource("BoxMesh_i431l")
 surface_material_override/0 = SubResource("StandardMaterial3D_6t8i5")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player" unique_id=1334406925]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="OrbitPivot/Player" unique_id=1334406925]
 libraries/ = SubResource("AnimationLibrary_7sfm4")
 
-[node name="PCSlashAnim" type="AnimatedSprite3D" parent="Player" unique_id=1635295306]
+[node name="PCSlashAnim" type="AnimatedSprite3D" parent="OrbitPivot/Player" unique_id=1635295306]
 process_mode = 3
 transform = Transform3D(2.743275, 0, 0, 0, 2.2273598, 0, 0, 0, 1, 0.99779797, 0.11267567, -2.1380367)
 visible = false
@@ -222,11 +227,21 @@ sprite_frames = SubResource("SpriteFrames_xjphx")
 frame = 8
 frame_progress = 1.0
 
-[node name="PlayerGuardAnim" type="Sprite3D" parent="Player" unique_id=941719064]
+[node name="PlayerGuardAnim" type="Sprite3D" parent="OrbitPivot/Player" unique_id=941719064]
 transform = Transform3D(0.13994828, 0, 0, 0, 0.13994828, 0, 0, 0, 0.07960862, 0.42021543, 0.051319182, 0.5890298)
 visible = false
 billboard = 1
 texture = ExtResource("7_0npn6")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="OrbitPivot" unique_id=215954269]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8642441, 1.3808385, 4.2133346)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="OrbitPivot" unique_id=1457224166]
+transform = Transform3D(0.48497754, 0, -0.8745267, 0, 1, 0, 0.8745267, 0, 0.48497754, -6.871948, 2.6339924, 7.533141)
+light_energy = 3.5
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="OrbitPivot" unique_id=1166929350]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.42880833, 1.6343063, 0.118403435)
 
 [node name="Enemy" type="Node3D" parent="." unique_id=603075046]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.215177)
@@ -379,13 +394,3 @@ offset_top = 187.0
 offset_right = 1053.0
 offset_bottom = 210.0
 text = "Targeting: Torso"
-
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=215954269]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.034906864, 1.3808385, 0.071320176)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1457224166]
-transform = Transform3D(0.48497754, 0, -0.8745267, 0, 1, 0, 0.8745267, 0, 0.48497754, -6.0426106, 2.6339924, 3.3911269)
-light_energy = 3.5
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1166929350]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4005289, 1.6343063, -4.023611)

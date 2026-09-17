@@ -1,8 +1,9 @@
 extends Node3D
 
-@onready var player = $Player
+@onready var player = $OrbitPivot/Player
 @onready var enemy = $Enemy
 @onready var ui = $CanvasLayer/UI
+@onready var orbit_pivot = $OrbitPivot
 
 var battle_active = true
 
@@ -43,33 +44,10 @@ func player_recovered():
 	ui.set_stamina_recovery(false)
 
 func rotate_scene_right(angle):
-	_rotate_scene(angle, Vector3.UP)
+	orbit_pivot.rotate_y(-angle)
 
 func rotate_scene_left(angle):
-	_rotate_scene(angle, Vector3.DOWN)
-
-func _rotate_scene(angle, axis):
-	var enemy_pos = enemy.global_position
-	
-	var player_offset = player.global_position - enemy_pos
-	player_offset = player_offset.rotated(axis, angle)
-	player.global_position = enemy_pos + player_offset
-	
-	var camera_pos = $Camera3D.global_position
-	var camera_offset = camera_pos - enemy_pos
-	camera_offset = camera_offset.rotated(axis, angle)
-	$Camera3D.global_position = enemy_pos + camera_offset
-	$Camera3D.look_at(enemy_pos, Vector3.UP)
-	
-	for anim in player.animations:
-		var pos_offset = anim.global_position - enemy_pos
-		pos_offset = pos_offset.rotated(axis, angle)
-		anim.global_position = enemy_pos + pos_offset
-	for anim in enemy.animations:
-		var pos_offset = anim.global_position - enemy_pos
-		pos_offset = pos_offset.rotated(axis, angle)
-		anim.global_position = enemy_pos + pos_offset
-
+	orbit_pivot.rotate_y(angle)
 
 # --- Called by Enemy ---
 
